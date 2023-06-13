@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "./App.css";
+import "../app/styles/tailwind.css";
 import Card from "../app/components/Card/Card";
 import Header from "../app/components/Header";
 // import Wave from './components/Wave/Wave';
 // interface AppProps{
 //       onChange: (val: string) =>void
 // }
-function Page() {
+function Index() {
     const [country, setCountry] = useState("");
     const handleChange = (val: string) => {
         setCountry(val);
@@ -26,4 +26,4 @@ function Page() {
     );
 }
 
-export default Page;
+export default Index;

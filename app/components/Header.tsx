@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BiMenu } from "react-icons/bi";
-import Logo from "../images/weaths.png";
+import weathLogo from "@/public/images/weaths.png";
+import Image from "next/image";
 import moment from "moment";
 export interface HeaderProps {
     onChange: (val: string) => void;
@@ -20,10 +21,12 @@ const Header = ({ onChange }: HeaderProps) => {
                     <div className="flex flex-1 items-center">
                         <BiMenu className="text-[35px] mr-10 align-middle text-white hidden md:inline-block" />
                         <a href="./">
-                            <img
-                                src={Logo}
+                            <Image
+                                src="/images/weaths.png"
                                 alt="logo"
                                 className="h-16 w-auto"
+                                height={272}
+                                width={868}
                             />
                         </a>
                     </div>
