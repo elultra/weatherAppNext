@@ -2,12 +2,12 @@ import axios from "axios";
 
 export const getWeathers = (country?: string) => {
     return axios.get(
-        `https://weather-app-backend-lkgk1no7h-ericyui66-outlookcom.vercel.app/api/v1/weathers/${country}`
+        `https://weather-app-backend-eta.vercel.app/v1/weathers/${country}`
     );
 };
 
-export const getGeoLocation = () => {
+export const getGeoLocation = (country?: string) => {
     return axios.get(
-        "https://weather-app-backend-lkgk1no7h-ericyui66-outlookcom.vercel.app/api/v1/weathers"
+        `https://weather-app-backend-eta.vercel.app/v1/${country}`
     );
 };

@@ -6,11 +6,13 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 import { getWeathers } from "../../utils/api";
 
 const Card = ({ country: selectedCountry }: any) => {
-    const [loading, setLoading] = useState(false);
-    const [countryData, setCountryData] = useState<any>({ country: "" });
+    const [loading, setLoading] = useState<boolean>(false);
+    const [countryData, setCountryData] = useState<any>({
+        country: selectedCountry,
+    });
     const [data, setData] = useState([]);
     useEffect(() => {
-        const getData = async () => {
+        const getWeatherData = async () => {
             try {
                 setLoading(true);
                 const { data } = await getWeathers(selectedCountry);
@@ -24,7 +26,7 @@ const Card = ({ country: selectedCountry }: any) => {
                 setLoading(false);
             }
         };
-        getData();
+        getWeatherData();
     }, [selectedCountry]);
     return (
         <>
